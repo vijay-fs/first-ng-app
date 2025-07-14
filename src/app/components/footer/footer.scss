@@ -1,0 +1,150 @@
+ #footer {
+      background-color: #f8f9fa;
+      border-top: 1px solid #e9ecef;
+    }
+    
+    .footer-menu {
+      margin-bottom: 2rem;
+    }
+    
+    .footer-intro img {
+      max-width: 150px;
+      height: auto;
+    }
+    
+    .widget-title {
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 1.5rem;
+    }
+    
+    .menu-list {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .menu-item {
+      margin-bottom: 0.5rem;
+    }
+    
+    .item-anchor {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .item-anchor:hover {
+      color: #8C907E;
+    }
+    
+    .border-animation-left .item-anchor {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .border-animation-left .item-anchor::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      left: 0;
+      bottom: -2px;
+      z-index: 9;
+      background: #111;
+      transition: all 0.5s ease;
+    }
+    
+    .border-animation-left .item-anchor:hover::after,
+    .border-animation-left .item-anchor:focus::after {
+      width: 100%;
+    }
+    
+    .social-links svg {
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover svg {
+      color: #8C907E;
+      transform: translateY(-2px);
+    }
+    
+    .footer-menu-004 p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .footer-menu-004 .item-anchor {
+      color: #8C907E;
+    }
+    
+    .footer-menu-004 .item-anchor:hover {
+      color: #111;
+    }
+    
+    .border-top {
+      border-top: 1px solid #e9ecef !important;
+    }
+    
+    .shipping,
+    .payment-option {
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .shipping span,
+    .payment-option span {
+      margin-right: 0.5rem;
+      color: #666;
+      font-size: 0.875rem;
+    }
+    
+    .shipping img,
+    .payment-option img {
+      height: 20px;
+      margin-right: 0.5rem;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    
+    .shipping img:hover,
+    .payment-option img:hover {
+      opacity: 1;
+    }
+    
+    .col-md-6:last-child p {
+      color: #666;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+    
+    .col-md-6:last-child a {
+      color: #8C907E;
+      text-decoration: none;
+    }
+    
+    .col-md-6:last-child a:hover {
+      color: #111;
+    }
+    
+    @media (max-width: 768px) {
+      .footer-menu {
+        margin-bottom: 3rem;
+      }
+      
+      .col-md-6:last-child {
+        text-align: center !important;
+        margin-top: 2rem;
+      }
+      
+      .shipping,
+      .payment-option {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      .col-md-6:first-child {
+        text-align: center;
+      }
+    }
