@@ -4,6 +4,7 @@ import { trigger, state, style, transition, animate, query, stagger } from '@ang
 import homeData from '@data/home.json';
 import { CartService } from '../services/cart.service';
 import { WishlistService } from '../services/wishlist.service';
+import { MetadataService } from '../services/metadata.service';
 
 // Interfaces
 export interface BannerItem {
@@ -109,6 +110,7 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   cartService = inject(CartService);
   wishlistService = inject(WishlistService);
+  private metadataService = inject(MetadataService);
   
   bannerItems = signal<BannerItem[]>(homeData.bannerItems);
 
@@ -149,7 +151,12 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
   private intersectionObserver?: IntersectionObserver;
 
   ngOnInit() {
-    // Component initialization
+    this.metadataService.updateMetadata({
+      title: 'Kaira - Premium Fashion & Lifestyle',
+      description: 'Discover premium fashion and lifestyle products at Kaira. Shop curated collections of clothing, accessories, and lifestyle essentials.',
+      keywords: 'fashion, lifestyle, premium, clothing, accessories, shopping, style, trends, kaira, home, collection',
+      url: 'https://kaira.devquery.in'
+    });
   }
 
   ngAfterViewInit() {

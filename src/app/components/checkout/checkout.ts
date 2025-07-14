@@ -1,8 +1,9 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { CartService } from '../../services/cart.service';
+import { MetadataService } from '../../services/metadata.service';
 
 @Component({
   selector: 'app-checkout',
@@ -35,8 +36,17 @@ import { CartService } from '../../services/cart.service';
     ])
   ]
 })
-export class Checkout {
+export class Checkout implements OnInit {
   cartService = inject(CartService);
+  private metadataService = inject(MetadataService);
+
+  ngOnInit() {
+    this.metadataService.updateMetadata({
+      title: 'Checkout - Kaira',
+      description: 'Complete your purchase at Kaira. Secure checkout with fast shipping for premium fashion and lifestyle products.',
+      keywords: 'checkout, payment, secure, shipping, kaira, purchase, fashion, shopping cart'
+    });
+  }
   
   // Form data
   customerInfo = signal({
