@@ -20,11 +20,6 @@ export class WishlistService {
   items = this.wishlistItems.asReadonly();
   totalItems = computed(() => this.wishlistItems().length);
 
-  constructor() {
-    // Load wishlist from localStorage on service initialization
-    this.loadWishlistFromStorage();
-  }
-
   addToWishlist(product: { id: number; title: string; price: string; image: string }) {
     const priceNumber = parseFloat(product.price.replace('$', ''));
     const existingItem = this.wishlistItems().find(item => item.id === product.id);
@@ -40,7 +35,6 @@ export class WishlistService {
       };
       this.wishlistItems.update(items => [...items, newItem]);
       this.toastService.success(`"${product.title}" added to wishlist!`);
-      this.saveWishlistToStorage();
     }
   }
 
@@ -49,7 +43,6 @@ export class WishlistService {
     if (item) {
       this.wishlistItems.update(items => items.filter(item => item.id !== productId));
       this.toastService.info(`"${item.title}" removed from wishlist`);
-      this.saveWishlistToStorage();
     }
   }
 
@@ -71,23 +64,6 @@ export class WishlistService {
     if (this.wishlistItems().length > 0) {
       this.wishlistItems.set([]);
       this.toastService.info('Wishlist cleared');
-      this.saveWishlistToStorage();
-    }
-  }
-
-  private saveWishlistToStorage() {
-    localStorage.setItem('wishlist', JSON.stringify(this.wishlistItems()));
-  }
-
-  private loadWishlistFromStorage() {
-    const stored = localStorage.getItem('wishlist');
-    if (stored) {
-      try {
-        const parsedItems = JSON.parse(stored);
-        this.wishlistItems.set(parsedItems);
-      } catch (error) {
-        console.error('Error loading wishlist from storage:', error);
-      }
     }
   }
 }

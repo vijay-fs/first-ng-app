@@ -24,11 +24,6 @@ export class CartService {
     this.cartItems().reduce((total, item) => total + (item.priceNumber * item.quantity), 0)
   );
 
-  constructor() {
-    // Load cart from localStorage on service initialization
-    this.loadCartFromStorage();
-  }
-
   addToCart(product: { id: number; title: string; price: string; image: string }) {
     const priceNumber = parseFloat(product.price.replace('$', ''));
     const existingItem = this.cartItems().find(item => item.id === product.id);
@@ -56,8 +51,6 @@ export class CartService {
       this.cartItems.update(items => [...items, newItem]);
       this.toastService.success(`"${product.title}" added to cart!`);
     }
-    
-    this.saveCartToStorage();
   }
 
   removeFromCart(productId: number) {
@@ -65,7 +58,6 @@ export class CartService {
     if (item) {
       this.cartItems.update(items => items.filter(item => item.id !== productId));
       this.toastService.info(`"${item.title}" removed from cart`);
-      this.saveCartToStorage();
     }
   }
 
@@ -82,30 +74,12 @@ export class CartService {
           : item
       )
     );
-    this.saveCartToStorage();
   }
 
   clearCart() {
     if (this.cartItems().length > 0) {
       this.cartItems.set([]);
       this.toastService.info('Cart cleared');
-      this.saveCartToStorage();
-    }
-  }
-
-  private saveCartToStorage() {
-    localStorage.setItem('cart', JSON.stringify(this.cartItems()));
-  }
-
-  private loadCartFromStorage() {
-    const stored = localStorage.getItem('cart');
-    if (stored) {
-      try {
-        const parsedItems = JSON.parse(stored);
-        this.cartItems.set(parsedItems);
-      } catch (error) {
-        console.error('Error loading cart from storage:', error);
-      }
     }
   }
 }
