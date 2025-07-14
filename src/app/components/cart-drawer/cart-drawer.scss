@@ -1,0 +1,41 @@
+.offcanvas-header {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.cart-content {
+  padding: 2rem 0;
+}
+
+.cart-item {
+  .cart-item-image {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+  }
+  
+  .cart-item-details {
+    h6 {
+      font-weight: 600;
+      color: #212529;
+    }
+    
+    .btn-sm {
+      padding: 0.25rem 0.75rem;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.cart-summary {
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 2rem 0;
+  
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+}

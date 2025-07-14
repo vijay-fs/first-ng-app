@@ -4,10 +4,11 @@ import headerData from '@data/header.json';
 import { CartService } from '../../services/cart.service';
 import { WishlistService } from '../../services/wishlist.service';
 import { WishlistDrawer } from '../wishlist-drawer/wishlist-drawer';
+import { CartDrawer } from '../cart-drawer/cart-drawer';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, WishlistDrawer],
+  imports: [CommonModule, WishlistDrawer, CartDrawer],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
