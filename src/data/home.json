@@ -1,0 +1,277 @@
+{
+  "bannerItems": [
+    {
+      "id": 1,
+      "image": "images/banner-image-6.jpg",
+      "title": "Soft leather jackets",
+      "description": "Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "image": "images/banner-image-1.jpg",
+      "title": "Soft leather jackets",
+      "description": "Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "image": "images/banner-image-2.jpg",
+      "title": "Soft leather jackets",
+      "description": "Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "image": "images/banner-image-3.jpg",
+      "title": "Soft leather jackets",
+      "description": "Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "image": "images/banner-image-4.jpg",
+      "title": "Out crop sweater",
+      "description": "Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.",
+      "link": "#"
+    },
+    {
+      "id": 6,
+      "image": "images/banner-image-5.jpg",
+      "title": "Soft leather jackets",
+      "description": "Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.",
+      "link": "#"
+    }
+  ],
+  "featureItems": [
+    {
+      "id": 1,
+      "icon": "calendar",
+      "title": "Book An Appointment",
+      "description": "At imperdiet dui accumsan sit amet nulla risus est ultricies quis."
+    },
+    {
+      "id": 2,
+      "icon": "shopping-bag",
+      "title": "Pick up in store",
+      "description": "At imperdiet dui accumsan sit amet nulla risus est ultricies quis."
+    },
+    {
+      "id": 3,
+      "icon": "gift",
+      "title": "Special packaging",
+      "description": "At imperdiet dui accumsan sit amet nulla risus est ultricies quis."
+    },
+    {
+      "id": 4,
+      "icon": "arrow-cycle",
+      "title": "free global returns",
+      "description": "At imperdiet dui accumsan sit amet nulla risus est ultricies quis."
+    }
+  ],
+  "categoryItems": [
+    {
+      "id": 1,
+      "image": "images/cat-item1.jpg",
+      "title": "Men",
+      "buttonText": "Shop for men",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "image": "images/cat-item2.jpg",
+      "title": "Women",
+      "buttonText": "Shop for women",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "image": "images/cat-item3.jpg",
+      "title": "Accessories",
+      "buttonText": "Shop accessories",
+      "link": "#"
+    }
+  ],
+  "newArrivals": [
+    {
+      "id": 1,
+      "image": "images/product-item-1.jpg",
+      "title": "Dark florish onepiece",
+      "price": "$95.00",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "image": "images/product-item-2.jpg",
+      "title": "Baggy Shirt",
+      "price": "$55.00",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "image": "images/product-item-3.jpg",
+      "title": "Cotton Off-White Shirt",
+      "price": "$65.00",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "image": "images/product-item-4.jpg",
+      "title": "Handmade crop sweater",
+      "price": "$50.00",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "image": "images/product-item-5.jpg",
+      "title": "Elegant blue dress",
+      "price": "$85.00",
+      "link": "#"
+    }
+  ],
+  "bestSellers": [
+    {
+      "id": 1,
+      "image": "images/product-item-4.jpg",
+      "title": "Handmade crop sweater",
+      "price": "$50.00",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "image": "images/product-item-6.jpg",
+      "title": "Classic white shirt",
+      "price": "$45.00",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "image": "images/product-item-7.jpg",
+      "title": "Summer dress",
+      "price": "$75.00",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "image": "images/product-item-8.jpg",
+      "title": "Casual jacket",
+      "price": "$95.00",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "image": "images/product-item-9.jpg",
+      "title": "Formal blazer",
+      "price": "$120.00",
+      "link": "#"
+    }
+  ],
+  "relatedProducts": [
+    {
+      "id": 1,
+      "image": "images/product-item-5.jpg",
+      "title": "Elegant blue dress",
+      "price": "$85.00",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "image": "images/product-item-10.jpg",
+      "title": "Casual top",
+      "price": "$40.00",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "image": "images/product-item-1.jpg",
+      "title": "Dark florish onepiece",
+      "price": "$95.00",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "image": "images/product-item-2.jpg",
+      "title": "Baggy Shirt",
+      "price": "$55.00",
+      "link": "#"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "image": "images/post-image1.jpg",
+      "title": "How to look outstanding in pastel",
+      "category": "Fashion",
+      "date": "jul 11, 2022",
+      "excerpt": "Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "image": "images/post-image2.jpg",
+      "title": "Top 10 fashion trends",
+      "category": "Style",
+      "date": "jul 18, 2022",
+      "excerpt": "Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "image": "images/post-image3.jpg",
+      "title": "Seasonal wardrobe tips",
+      "category": "Fashion",
+      "date": "jul 25, 2022",
+      "excerpt": "Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...",
+      "link": "#"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "text": "More than expected crazy soft, flexible and best fitted white simple denim shirt.",
+      "author": "casual way"
+    },
+    {
+      "id": 2,
+      "text": "Best fitted white denim shirt more than expected crazy soft, flexible",
+      "author": "uptop"
+    },
+    {
+      "id": 3,
+      "text": "Amazing quality and perfect fit. Highly recommend this product!",
+      "author": "fashion lover"
+    }
+  ],
+  "instagramItems": [
+    {
+      "id": 1,
+      "image": "images/insta-item1.jpg",
+      "link": "https://www.instagram.com/templatesjungle/"
+    },
+    {
+      "id": 2,
+      "image": "images/insta-item2.jpg",
+      "link": "https://www.instagram.com/templatesjungle/"
+    },
+    {
+      "id": 3,
+      "image": "images/insta-item3.jpg",
+      "link": "https://www.instagram.com/templatesjungle/"
+    },
+    {
+      "id": 4,
+      "image": "images/insta-item4.jpg",
+      "link": "https://www.instagram.com/templatesjungle/"
+    },
+    {
+      "id": 5,
+      "image": "images/insta-item5.jpg",
+      "link": "https://www.instagram.com/templatesjungle/"
+    },
+    {
+      "id": 6,
+      "image": "images/insta-item6.jpg",
+      "link": "https://www.instagram.com/templatesjungle/"
+    }
+  ]
+}
