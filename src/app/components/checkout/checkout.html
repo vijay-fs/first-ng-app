@@ -1,0 +1,202 @@
+<!-- Checkout Container -->
+<div class="checkout-container" [@slideIn]>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        
+        <!-- Success Message -->
+        <div *ngIf="showSuccess()" class="success-message text-center mb-5" [@bounce]>
+          <div class="success-icon mb-3">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22,4 12,14.01 9,11.01"/>
+            </svg>
+          </div>
+          <h2 class="success-title">Order Placed Successfully!</h2>
+          <p class="success-message-text">Thank you for your purchase. Your order has been confirmed and will be processed shortly.</p>
+          <div class="order-details">
+            <p><strong>Order Number:</strong> #{{ generateOrderNumber() }}</p>
+            <p><strong>Total Items:</strong> {{ orderData().totalItems }}</p>
+            <p><strong>Total Amount:</strong> ${{ orderData().totalAmount }}</p>
+          </div>
+        </div>
+
+        <!-- Processing Animation -->
+        <div *ngIf="isProcessing()" class="processing-container text-center" [@fadeIn]>
+          <div class="processing-spinner" [@pulse]="pulseState()">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <h3 class="processing-title mt-3">{{ getCurrentStep() }}</h3>
+          <div class="progress-bar-container mt-4">
+            <div class="progress-bar" [style.width.%]="((processingStep() + 1) / 4) * 100"></div>
+          </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <div *ngIf="!isProcessing() && !showSuccess()" [@fadeIn]>
+          <div class="checkout-header text-center mb-5">
+            <h1 class="checkout-title">Checkout</h1>
+            <p class="checkout-subtitle">Complete your order below</p>
+            <p class="text-muted"><small>Fields marked with * are required</small></p>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary mb-5">
+            <h3>Order Summary</h3>
+            <div class="order-items">
+              <div *ngFor="let item of cartService.items()" class="order-item d-flex justify-content-between align-items-center">
+                <div class="item-details d-flex align-items-center">
+                  <img [src]="item.image" [alt]="item.title" class="item-image me-3">
+                  <div>
+                    <h6 class="item-title">{{ item.title }}</h6>
+                    <p class="item-price">{{ item.price }} x {{ item.quantity }}</p>
+                  </div>
+                </div>
+                <div class="item-total">
+                  ${{ getItemTotal(item) }}
+                </div>
+              </div>
+            </div>
+            <div class="order-total">
+              <div class="total-line d-flex justify-content-between">
+                <span>Total Items:</span>
+                <span>{{ cartService.totalItems() }}</span>
+              </div>
+              <div class="total-line d-flex justify-content-between">
+                <strong>Total Amount:</strong>
+                <strong>${{ cartService.totalPrice() }}</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Information -->
+          <div class="customer-section mb-5">
+            <h3>Customer Information</h3>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName" class="form-label">First Name *</label>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  class="form-control" 
+                  [ngModel]="customerInfo().firstName"
+                  (ngModelChange)="updateCustomerInfo('firstName', $event)"
+                  required
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName" class="form-label">Last Name *</label>
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  class="form-control" 
+                  [ngModel]="customerInfo().lastName"
+                  (ngModelChange)="updateCustomerInfo('lastName', $event)"
+                  required
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  class="form-control" 
+                  [ngModel]="customerInfo().email"
+                  (ngModelChange)="updateCustomerInfo('email', $event)"
+                  required
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  class="form-control" 
+                  [ngModel]="customerInfo().phone"
+                  (ngModelChange)="updateCustomerInfo('phone', $event)"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Shipping Address -->
+          <div class="shipping-section mb-5">
+            <h3>Shipping Address</h3>
+            <div class="row">
+              <div class="col-12 mb-3">
+                <label for="address" class="form-label">Street Address *</label>
+                <input 
+                  type="text" 
+                  id="address" 
+                  class="form-control" 
+                  [ngModel]="shippingAddress().address"
+                  (ngModelChange)="updateShippingAddress('address', $event)"
+                  required
+                >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="city" class="form-label">City *</label>
+                <input 
+                  type="text" 
+                  id="city" 
+                  class="form-control" 
+                  [ngModel]="shippingAddress().city"
+                  (ngModelChange)="updateShippingAddress('city', $event)"
+                  required
+                >
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="state" class="form-label">State</label>
+                <input 
+                  type="text" 
+                  id="state" 
+                  class="form-control" 
+                  [ngModel]="shippingAddress().state"
+                  (ngModelChange)="updateShippingAddress('state', $event)"
+                >
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="zipCode" class="form-label">ZIP Code</label>
+                <input 
+                  type="text" 
+                  id="zipCode" 
+                  class="form-control" 
+                  [ngModel]="shippingAddress().zipCode"
+                  (ngModelChange)="updateShippingAddress('zipCode', $event)"
+                >
+              </div>
+              <div class="col-12 mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input 
+                  type="text" 
+                  id="country" 
+                  class="form-control" 
+                  [ngModel]="shippingAddress().country"
+                  (ngModelChange)="updateShippingAddress('country', $event)"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="checkout-actions text-center">
+            <button 
+              type="button" 
+              class="btn btn-primary btn-lg px-5"
+              [disabled]="!isFormValid()"
+              (click)="processOrder()"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="me-2">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              Place Order - ${{ cartService.totalPrice() }}
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
