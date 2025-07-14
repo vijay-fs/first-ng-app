@@ -724,6 +724,38 @@ interface InstagramItem {
       position: relative;
       z-index: 1;
     }
+
+    .border-animation-left .item-anchor {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .border-animation-left .item-anchor::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      left: 0;
+      bottom: -2px;
+      z-index: 9;
+      background: #111;
+      transition: all 0.5s ease;
+    }
+    
+    .border-animation-left .item-anchor:hover::after,
+    .border-animation-left .item-anchor:focus::after {
+      width: 100%;
+    }
+    
+    .item-anchor {
+      color: #111;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .item-anchor:hover {
+      color: #8C907E;
+    }
   `]
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
