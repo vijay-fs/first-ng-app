@@ -2,15 +2,15 @@
     <section id="billboard" class="bg-light py-5">
       <div class="container">
         <div class="row justify-content-center">
-          <h1 class="section-title text-center mt-4" data-aos="fade-up">New Collections</h1>
-          <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
+          <h1 class="section-title text-center mt-4">New Collections</h1>
+          <div class="col-md-6 text-center">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptas ut dolorum consequuntur, adipisci
               repellat! Eveniet commodi voluptatem voluptate, eum minima, in suscipit explicabo voluptatibus harum,
               quibusdam ex repellat eaque!</p>
           </div>
         </div>
         <div class="row">
-          <div class="swiper main-swiper py-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="swiper main-swiper py-4">
             <div class="swiper-wrapper d-flex border-animation-left">
               <div class="swiper-slide" *ngFor="let banner of bannerItems()">
                 <div class="banner-item image-zoom-effect">
@@ -48,9 +48,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3 text-center" 
-               *ngFor="let feature of featureItems(); let i = index"
-               [attr.data-aos]="'fade-in'" 
-               [attr.data-aos-delay]="i * 300">
+               *ngFor="let feature of featureItems(); let i = index">
             <div class="py-5">
               <svg width="38" height="38" viewBox="0 0 24 24">
                 <use [attr.xlink:href]="'#' + feature.icon"></use>
@@ -66,7 +64,7 @@
     <!-- Categories Section -->
     <section class="categories overflow-hidden">
       <div class="container">
-        <div class="open-up" data-aos="zoom-out">
+        <div class="open-up">
           <div class="row">
             <div class="col-md-4" *ngFor="let category of categoryItems()">
               <div class="cat-item image-zoom-effect">
@@ -94,7 +92,7 @@
           <h4 class="text-uppercase">Our New Arrivals</h4>
           <a href="index.html" class="btn-link">View All Products</a>
         </div>
-        <div class="swiper product-swiper open-up" data-aos="zoom-out">
+        <div class="swiper product-swiper open-up">
           <div class="swiper-wrapper d-flex">
             <div class="swiper-slide" *ngFor="let product of newArrivals()">
               <div class="product-item image-zoom-effect link-effect">
@@ -161,7 +159,7 @@
           <h4 class="text-uppercase">Best Selling Items</h4>
           <a href="index.html" class="btn-link">View All Products</a>
         </div>
-        <div class="swiper product-swiper open-up" data-aos="zoom-out">
+        <div class="swiper product-swiper open-up">
           <div class="swiper-wrapper d-flex">
             <div class="swiper-slide" *ngFor="let product of bestSellers()">
               <div class="product-item image-zoom-effect link-effect">
@@ -199,7 +197,7 @@
     <section class="video py-5 overflow-hidden">
       <div class="container-fluid">
         <div class="row">
-          <div class="video-content open-up" data-aos="zoom-out">
+          <div class="video-content open-up">
             <div class="video-bg">
               <img src="images/video-image.jpg" alt="video" class="video-image img-fluid">
             </div>
@@ -243,7 +241,7 @@
           <h4 class="text-uppercase">You May Also Like</h4>
           <a href="index.html" class="btn-link">View All Products</a>
         </div>
-        <div class="swiper product-swiper open-up" data-aos="zoom-out">
+        <div class="swiper product-swiper open-up">
           <div class="swiper-wrapper d-flex">
             <div class="swiper-slide" *ngFor="let product of relatedProducts()">
               <div class="product-item image-zoom-effect link-effect">

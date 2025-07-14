@@ -92,7 +92,6 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.initializeSwipers();
-      this.initializeAOS();
     }
   }
 
@@ -201,16 +200,4 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  private async initializeAOS() {
-    try {
-      // Dynamic import for AOS
-      const AOS = await import('aos');
-      AOS.init({
-        duration: 1200,
-        once: true
-      });
-    } catch (error) {
-      console.error('Error initializing AOS:', error);
-    }
-  }
 }
