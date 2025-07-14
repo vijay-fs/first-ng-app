@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, signal, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { trigger, state, style, transition, animate, query, stagger } from '@angular/animations';
 import homeData from '@data/home.json';
 
 // Interfaces
@@ -60,7 +61,46 @@ export interface InstagramItem {
   selector: 'app-home',
   imports: [CommonModule],
   templateUrl: './home.html',
-  styleUrl: './home.scss'
+  styleUrl: './home.scss',
+  animations: [
+    trigger('fadeUp', [
+      state('hidden', style({ opacity: 0, transform: 'translateY(30px)' })),
+      state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
+      transition('hidden => visible', animate('600ms ease-out')),
+      transition('void => *', [
+        style({ opacity: 1, transform: 'translateY(0)' }),
+        animate('0ms')
+      ])
+    ]),
+    trigger('zoomOut', [
+      state('hidden', style({ opacity: 0, transform: 'scale(1.1)' })),
+      state('visible', style({ opacity: 1, transform: 'scale(1)' })),
+      transition('hidden => visible', animate('800ms ease-out')),
+      transition('void => *', [
+        style({ opacity: 1, transform: 'scale(1)' }),
+        animate('0ms')
+      ])
+    ]),
+    trigger('fadeIn', [
+      state('hidden', style({ opacity: 0 })),
+      state('visible', style({ opacity: 1 })),
+      transition('hidden => visible', animate('600ms ease-out')),
+      transition('void => *', [
+        style({ opacity: 1 }),
+        animate('0ms')
+      ])
+    ]),
+    trigger('staggerItems', [
+      transition('* => *', [
+        query('.animate-item', [
+          style({ opacity: 0, transform: 'translateY(30px)' }),
+          stagger(300, [
+            animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+          ])
+        ], { optional: true })
+      ])
+    ])
+  ]
 })
 export class Home implements OnInit, AfterViewInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
@@ -83,7 +123,23 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
 
   instagramItems = signal<InstagramItem[]>(homeData.instagramItems);
 
+  // Animation states - initialize visible for above-the-fold content
+  sectionAnimationStates = signal({
+    billboard: 'visible',
+    features: 'hidden',
+    categories: 'hidden',
+    'new-arrival': 'visible',
+    'best-sellers': 'visible',
+    collection: 'hidden',
+    video: 'hidden',
+    testimonials: 'hidden',
+    'related-products': 'visible',
+    blog: 'hidden',
+    newsletter: 'hidden'
+  });
+
   private swipers: any[] = [];
+  private intersectionObserver?: IntersectionObserver;
 
   ngOnInit() {
     // Component initialization
@@ -91,7 +147,10 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.initializeSwipers();
+      setTimeout(() => {
+        this.initializeSwipers();
+        this.initializeIntersectionObserver();
+      }, 50);
     }
   }
 
@@ -101,6 +160,9 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
         swiper.destroy();
       }
     });
+    if (this.intersectionObserver) {
+      this.intersectionObserver.disconnect();
+    }
   }
 
   private async initializeSwipers() {
@@ -197,6 +259,43 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
       this.swipers.push(mainSwiper, testimonialSwiper);
     } catch (error) {
       console.error('Error initializing Swiper:', error);
+    }
+  }
+
+  private initializeIntersectionObserver() {
+    // Delay to ensure DOM is ready
+    setTimeout(() => {
+      this.intersectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            if (sectionId) {
+              this.triggerAnimation(sectionId);
+            }
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe all sections
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => {
+        this.intersectionObserver?.observe(section);
+      });
+    }, 100);
+  }
+
+  private triggerAnimation(sectionId: string) {
+    const currentStates = this.sectionAnimationStates();
+    const validSectionIds = Object.keys(currentStates);
+    
+    if (validSectionIds.includes(sectionId) && currentStates[sectionId as keyof typeof currentStates] === 'hidden') {
+      this.sectionAnimationStates.update(states => ({
+        ...states,
+        [sectionId]: 'visible'
+      }));
     }
   }
 

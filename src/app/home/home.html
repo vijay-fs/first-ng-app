@@ -1,16 +1,16 @@
  <!-- Billboard Section -->
-    <section id="billboard" class="bg-light py-5">
+    <section id="billboard" class="bg-light py-5" [@fadeUp]="sectionAnimationStates().billboard">
       <div class="container">
         <div class="row justify-content-center">
-          <h1 class="section-title text-center mt-4">New Collections</h1>
-          <div class="col-md-6 text-center">
+          <h1 class="section-title text-center mt-4" [@fadeUp]="sectionAnimationStates().billboard">New Collections</h1>
+          <div class="col-md-6 text-center" [@fadeUp]="sectionAnimationStates().billboard">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptas ut dolorum consequuntur, adipisci
               repellat! Eveniet commodi voluptatem voluptate, eum minima, in suscipit explicabo voluptatibus harum,
               quibusdam ex repellat eaque!</p>
           </div>
         </div>
         <div class="row">
-          <div class="swiper main-swiper py-4">
+          <div class="swiper main-swiper py-4" [@fadeUp]="sectionAnimationStates().billboard">
             <div class="swiper-wrapper d-flex border-animation-left">
               <div class="swiper-slide" *ngFor="let banner of bannerItems()">
                 <div class="banner-item image-zoom-effect">
@@ -44,10 +44,10 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features py-5">
+    <section id="features" class="features py-5" [@staggerItems]="sectionAnimationStates().features">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 text-center" 
+          <div class="col-md-3 text-center animate-item" 
                *ngFor="let feature of featureItems(); let i = index">
             <div class="py-5">
               <svg width="38" height="38" viewBox="0 0 24 24">
@@ -62,9 +62,9 @@
     </section>
 
     <!-- Categories Section -->
-    <section class="categories overflow-hidden">
+    <section id="categories" class="categories overflow-hidden">
       <div class="container">
-        <div class="open-up">
+        <div [@zoomOut]="sectionAnimationStates().categories">
           <div class="row">
             <div class="col-md-4" *ngFor="let category of categoryItems()">
               <div class="cat-item image-zoom-effect">
@@ -92,7 +92,7 @@
           <h4 class="text-uppercase">Our New Arrivals</h4>
           <a href="index.html" class="btn-link">View All Products</a>
         </div>
-        <div class="swiper product-swiper open-up">
+        <div class="swiper product-swiper" [@zoomOut]="sectionAnimationStates()['new-arrival']">
           <div class="swiper-wrapper d-flex">
             <div class="swiper-slide" *ngFor="let product of newArrivals()">
               <div class="product-item image-zoom-effect link-effect">
@@ -127,7 +127,7 @@
     </section>
 
     <!-- Collection Section -->
-    <section class="collection bg-light position-relative py-5">
+    <section id="collection" class="collection bg-light position-relative py-5" [@fadeUp]="sectionAnimationStates().collection">
       <div class="container">
         <div class="row">
           <div class="title-xlarge text-uppercase txt-fx domino">Collection</div>
@@ -159,7 +159,7 @@
           <h4 class="text-uppercase">Best Selling Items</h4>
           <a href="index.html" class="btn-link">View All Products</a>
         </div>
-        <div class="swiper product-swiper open-up">
+        <div class="swiper product-swiper" [@zoomOut]="sectionAnimationStates()['best-sellers']">
           <div class="swiper-wrapper d-flex">
             <div class="swiper-slide" *ngFor="let product of bestSellers()">
               <div class="product-item image-zoom-effect link-effect">
@@ -194,10 +194,10 @@
     </section>
 
     <!-- Video Section -->
-    <section class="video py-5 overflow-hidden">
+    <section id="video" class="video py-5 overflow-hidden">
       <div class="container-fluid">
         <div class="row">
-          <div class="video-content open-up">
+          <div class="video-content" [@zoomOut]="sectionAnimationStates().video">
             <div class="video-bg">
               <img src="images/video-image.jpg" alt="video" class="video-image img-fluid">
             </div>
@@ -215,7 +215,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials py-5 bg-light">
+    <section id="testimonials" class="testimonials py-5 bg-light" [@fadeUp]="sectionAnimationStates().testimonials">
       <div class="section-header text-center mt-5">
         <h3 class="section-title">WE LOVE GOOD COMPLIMENT</h3>
       </div>
@@ -241,7 +241,7 @@
           <h4 class="text-uppercase">You May Also Like</h4>
           <a href="index.html" class="btn-link">View All Products</a>
         </div>
-        <div class="swiper product-swiper open-up">
+        <div class="swiper product-swiper" [@zoomOut]="sectionAnimationStates()['related-products']">
           <div class="swiper-wrapper d-flex">
             <div class="swiper-slide" *ngFor="let product of relatedProducts()">
               <div class="product-item image-zoom-effect link-effect">
@@ -276,14 +276,14 @@
     </section>
 
     <!-- Blog Section -->
-    <section class="blog py-5">
+    <section id="blog" class="blog py-5" [@staggerItems]="sectionAnimationStates().blog">
       <div class="container">
         <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
           <h4 class="text-uppercase">Read Blog Posts</h4>
           <a href="index.html" class="btn-link">View All</a>
         </div>
         <div class="row">
-          <div class="col-md-4" *ngFor="let blog of blogPosts()">
+          <div class="col-md-4 animate-item" *ngFor="let blog of blogPosts()">
             <article class="post-item">
               <div class="post-image">
                 <a [href]="blog.link">
@@ -322,7 +322,7 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="newsletter bg-light" style="background: url(images/pattern-bg.png) no-repeat;">
+    <section id="newsletter" class="newsletter bg-light" style="background: url(images/pattern-bg.png) no-repeat;" [@fadeUp]="sectionAnimationStates().newsletter">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 py-5 my-5">
