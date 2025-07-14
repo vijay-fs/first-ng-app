@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, signal, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import homeData from '../../data/home.json';
+import homeData from '@data/home.json';
 
 // Interfaces
 export interface BannerItem {

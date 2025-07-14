@@ -1,0 +1,140 @@
+{
+  "footerInfo": {
+    "logoSrc": "images/main-logo.png",
+    "logoAlt": "logo",
+    "description": "Gravida massa volutpat aenean odio. Amet, turpis erat nullam fringilla elementum diam in. Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit."
+  },
+  "socialLinks": [
+    {
+      "id": "facebook",
+      "href": "#",
+      "icon": "facebook"
+    },
+    {
+      "id": "twitter", 
+      "href": "#",
+      "icon": "twitter"
+    },
+    {
+      "id": "youtube",
+      "href": "#", 
+      "icon": "youtube"
+    },
+    {
+      "id": "pinterest",
+      "href": "#",
+      "icon": "pinterest"
+    },
+    {
+      "id": "instagram",
+      "href": "#",
+      "icon": "instagram"
+    }
+  ],
+  "quickLinks": {
+    "title": "Quick Links",
+    "links": [
+      {
+        "text": "Home",
+        "href": "index.html"
+      },
+      {
+        "text": "About", 
+        "href": "index.html"
+      },
+      {
+        "text": "Services",
+        "href": "blog.html"
+      },
+      {
+        "text": "Single item",
+        "href": "styles.html"
+      },
+      {
+        "text": "Contact",
+        "href": "#"
+      }
+    ]
+  },
+  "helpInfo": {
+    "title": "Help & Info",
+    "links": [
+      {
+        "text": "Track Your Order",
+        "href": "#"
+      },
+      {
+        "text": "Returns + Exchanges",
+        "href": "#"
+      },
+      {
+        "text": "Shipping + Delivery",
+        "href": "#"
+      },
+      {
+        "text": "Contact Us",
+        "href": "#"
+      },
+      {
+        "text": "Find us easy",
+        "href": "#"
+      },
+      {
+        "text": "Faqs",
+        "href": "index.html"
+      }
+    ]
+  },
+  "contactInfo": {
+    "title": "Contact Us",
+    "email": {
+      "text": "Do you have any questions or suggestions?",
+      "address": "contact@yourcompany.com"
+    },
+    "phone": {
+      "text": "Do you need support? Give us a call.",
+      "number": "+43 720 11 52 78"
+    }
+  },
+  "shippingProviders": [
+    {
+      "name": "Arctic",
+      "image": "images/arct-icon.png",
+      "alt": "icon"
+    },
+    {
+      "name": "DHL",
+      "image": "images/dhl-logo.png", 
+      "alt": "icon"
+    }
+  ],
+  "paymentMethods": [
+    {
+      "name": "Visa",
+      "image": "images/visa-card.png",
+      "alt": "card"
+    },
+    {
+      "name": "PayPal",
+      "image": "images/paypal-card.png",
+      "alt": "card"
+    },
+    {
+      "name": "MasterCard", 
+      "image": "images/master-card.png",
+      "alt": "card"
+    }
+  ],
+  "copyright": {
+    "text": "© Copyright 2022 Kaira. All rights reserved. Design by",
+    "designLink": {
+      "text": "TemplatesJungle",
+      "href": "https://templatesjungle.com"
+    },
+    "distributionText": "Distribution By",
+    "distributionLink": {
+      "text": "ThemeWagon",
+      "href": "https://themewagon.com"
+    }
+  }
+}

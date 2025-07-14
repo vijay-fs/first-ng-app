@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, signal, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import headerData from '@data/header.json';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
-export class Header {
-constructor() {}
+export class Header implements AfterViewInit {
+  headerData = signal(headerData);
+  
+  constructor() {}
   
   ngAfterViewInit() {
     // Initialize search popup functionality

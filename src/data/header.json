@@ -1,0 +1,195 @@
+{
+  "navigation": {
+    "home": {
+      "text": "Home",
+      "dropdown": [
+        {
+          "text": "Home Layout 1",
+          "href": "index.html"
+        },
+        {
+          "text": "Home Layout 2", 
+          "href": "index.html"
+        },
+        {
+          "text": "Home Layout 3",
+          "href": "index.html"
+        },
+        {
+          "text": "Home Layout 4",
+          "href": "index.html"
+        }
+      ]
+    },
+    "shop": {
+      "text": "Shop",
+      "dropdown": [
+        {
+          "text": "Shop Sidebar",
+          "href": "index.html"
+        },
+        {
+          "text": "Shop Three Column",
+          "href": "index.html"
+        },
+        {
+          "text": "Shop Three Column Wide",
+          "href": "index.html"
+        },
+        {
+          "text": "Shop Four Column",
+          "href": "index.html"
+        },
+        {
+          "text": "Shop Four Column Wide",
+          "href": "index.html"
+        },
+        {
+          "text": "Shop Six Column", 
+          "href": "index.html"
+        },
+        {
+          "text": "Shop Six Column Wide",
+          "href": "index.html"
+        },
+        {
+          "text": "Single Product",
+          "href": "index.html"
+        },
+        {
+          "text": "Single Product V2",
+          "href": "index.html"
+        }
+      ]
+    },
+    "blog": {
+      "text": "Blog",
+      "dropdown": [
+        {
+          "text": "Blog Classic",
+          "href": "index.html"
+        },
+        {
+          "text": "Blog Grid with Sidebar",
+          "href": "index.html"
+        },
+        {
+          "text": "Blog Grid Four Column",
+          "href": "index.html"
+        },
+        {
+          "text": "Blog No Sidebar",
+          "href": "index.html"
+        },
+        {
+          "text": "Blog Right Sidebar",
+          "href": "index.html"
+        },
+        {
+          "text": "Single Post",
+          "href": "index.html"
+        },
+        {
+          "text": "Single Post No Sidebar",
+          "href": "index.html"
+        }
+      ]
+    },
+    "pages": {
+      "text": "Pages",
+      "dropdown": [
+        {
+          "text": "About",
+          "href": "index.html"
+        },
+        {
+          "text": "Cart",
+          "href": "index.html"
+        },
+        {
+          "text": "Checkout",
+          "href": "index.html"
+        },
+        {
+          "text": "Coming Soon",
+          "href": "index.html"
+        },
+        {
+          "text": "Contact",
+          "href": "index.html"
+        },
+        {
+          "text": "Error Page",
+          "href": "index.html"
+        },
+        {
+          "text": "FAQs",
+          "href": "index.html"
+        },
+        {
+          "text": "My Account",
+          "href": "index.html"
+        },
+        {
+          "text": "Order Tracking",
+          "href": "index.html"
+        },
+        {
+          "text": "Wishlist",
+          "href": "index.html"
+        }
+      ]
+    },
+    "directLinks": [
+      {
+        "text": "Blog",
+        "href": "#"
+      },
+      {
+        "text": "Contact",
+        "href": "#"
+      }
+    ]
+  },
+  "userActions": {
+    "wishlist": {
+      "text": "Wishlist",
+      "count": 0,
+      "href": "index.html"
+    },
+    "cart": {
+      "text": "Cart", 
+      "count": 0,
+      "href": "index.html"
+    }
+  },
+  "searchCategories": [
+    {
+      "text": "Men",
+      "href": "#"
+    },
+    {
+      "text": "Women",
+      "href": "#"
+    },
+    {
+      "text": "Shoes",
+      "href": "#"
+    },
+    {
+      "text": "Accessories",
+      "href": "#"
+    },
+    {
+      "text": "Electronics",
+      "href": "#"
+    },
+    {
+      "text": "Sports",
+      "href": "#"
+    }
+  ],
+  "searchPlaceholder": "Type and press enter",
+  "emptyCartMessage": "Your cart is empty",
+  "continueShoppingText": "Continue Shopping"
+}
