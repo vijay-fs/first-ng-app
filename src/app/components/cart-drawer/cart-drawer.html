@@ -8,7 +8,7 @@
     <div class="cart-content">
       <div *ngIf="cartService.totalItems() === 0; else cartItems" class="empty-cart">
         <p class="text-center text-muted">Your cart is empty</p>
-        <a href="#" class="btn btn-primary w-100 mt-3">Continue Shopping</a>
+        <a routerLink="/" class="btn btn-primary w-100 mt-3" data-bs-dismiss="offcanvas">Continue Shopping</a>
       </div>
       <ng-template #cartItems>
         <div class="cart-item d-flex align-items-center mb-3 pb-3 border-bottom" *ngFor="let item of cartService.items()">
@@ -37,7 +37,7 @@
             <span class="fw-bold">Total:</span>
             <span class="fw-bold">${{ cartService.totalPrice().toFixed(2) }}</span>
           </div>
-          <button class="btn btn-primary w-100 mb-2" (click)="navigateToCheckout()">Checkout</button>
+          <a routerLink="/checkout" class="btn btn-primary w-100 mb-2" data-bs-dismiss="offcanvas">Checkout</a>
           <button class="btn btn-outline-secondary w-100" (click)="cartService.clearCart()">Clear Cart</button>
         </div>
       </ng-template>
