@@ -20,6 +20,9 @@ import { ToastComponent } from './components/toast/toast';
   styles: [`
     main {
       min-height: 100vh;
+      max-width: 100wh;
+      padding: 0 1rem;
+      overflow: hidden;
     }
   `],
 })

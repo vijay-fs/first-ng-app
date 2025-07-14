@@ -100,11 +100,11 @@
                   <a [href]="product.link">
                     <img [src]="product.image" alt="product" class="product-image img-fluid">
                   </a>
-                  <a [href]="product.link" class="btn-icon btn-wishlist">
+                  <button type="button" class="btn-icon btn-wishlist" (click)="toggleWishlist(product)" [class.active]="isInWishlist(product.id)">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#heart"></use>
                     </svg>
-                  </a>
+                  </button>
                   <div class="product-content">
                     <h5 class="element-title text-uppercase fs-5 mt-3">
                       <a [href]="product.link">{{ product.title }}</a>
@@ -172,11 +172,11 @@
                   <a [href]="product.link">
                     <img [src]="product.image" alt="product" class="product-image img-fluid">
                   </a>
-                  <a [href]="product.link" class="btn-icon btn-wishlist">
+                  <button type="button" class="btn-icon btn-wishlist" (click)="toggleWishlist(product)" [class.active]="isInWishlist(product.id)">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#heart"></use>
                     </svg>
-                  </a>
+                  </button>
                   <div class="product-content">
                     <h5 class="element-title text-uppercase fs-5 mt-3">
                       <a [href]="product.link">{{ product.title }}</a>
@@ -254,11 +254,11 @@
                   <a [href]="product.link">
                     <img [src]="product.image" alt="product" class="product-image img-fluid">
                   </a>
-                  <a [href]="product.link" class="btn-icon btn-wishlist">
+                  <button type="button" class="btn-icon btn-wishlist" (click)="toggleWishlist(product)" [class.active]="isInWishlist(product.id)">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#heart"></use>
                     </svg>
-                  </a>
+                  </button>
                   <div class="product-content">
                     <h5 class="element-title text-uppercase fs-5 mt-3">
                       <a [href]="product.link">{{ product.title }}</a>

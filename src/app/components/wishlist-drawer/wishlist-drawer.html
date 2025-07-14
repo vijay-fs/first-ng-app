@@ -1,0 +1,35 @@
+<!-- Wishlist Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasWishlistLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWishlistLabel">Your Wishlist</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="wishlist-content">
+      <div *ngIf="wishlistService.totalItems() === 0; else wishlistItems" class="empty-wishlist">
+        <p class="text-center text-muted">Your wishlist is empty</p>
+        <a href="#" class="btn btn-primary w-100 mt-3">Continue Shopping</a>
+      </div>
+      <ng-template #wishlistItems>
+        <div class="wishlist-item d-flex align-items-center mb-3 pb-3 border-bottom" *ngFor="let item of wishlistService.items()">
+          <img [src]="item.image" [alt]="item.title" class="wishlist-item-image me-3" style="width: 60px; height: 60px; object-fit: cover;">
+          <div class="wishlist-item-details flex-grow-1">
+            <h6 class="mb-1">{{ item.title }}</h6>
+            <p class="mb-1 text-muted">{{ item.price }}</p>
+            <div class="d-flex align-items-center">
+              <button class="btn btn-sm btn-primary me-2" (click)="moveToCart(item)">Move to Cart</button>
+              <button class="btn btn-sm btn-outline-danger" (click)="wishlistService.removeFromWishlist(item.id)">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="wishlist-summary mt-3">
+          <div class="d-flex justify-content-between mb-3">
+            <span>Total Items:</span>
+            <span>{{ wishlistService.totalItems() }}</span>
+          </div>
+          <button class="btn btn-outline-secondary w-100" (click)="wishlistService.clearWishlist()">Clear Wishlist</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
