@@ -1,6 +1,7 @@
-import { Component, signal, AfterViewInit } from '@angular/core';
+import { Component, signal, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import headerData from '@data/header.json';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import headerData from '@data/header.json';
 })
 export class Header implements AfterViewInit {
   headerData = signal(headerData);
+  cartService = inject(CartService);
   
   constructor() {}
   
