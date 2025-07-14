@@ -308,3 +308,13 @@
     .item-anchor:hover {
       color: #8C907E;
     }
+
+    // Cart functionality styling
+    .product-content a[data-after="Add to cart"] {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .product-content a[data-after="Add to cart"]:hover {
+      color: #8C907E;
+    }
