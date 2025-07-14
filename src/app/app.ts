@@ -22,5 +22,5 @@ import { Footer } from './components/footer/footer';
   `],
 })
 export class App {
-  protected readonly title = signal('first-ng-app');
+  protected readonly title = signal('kaira');
 }
