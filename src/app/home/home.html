@@ -111,9 +111,18 @@
                     </h5>
                     <div class="d-flex align-items-center justify-content-between">
                       <span class="price fw-bold">{{ product.price }}</span>
-                      <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)">
-                        Add to Cart
-                      </button>
+                      <div *ngIf="!isInCart(product.id); else quantityControls">
+                        <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)">
+                          Add to Cart
+                        </button>
+                      </div>
+                      <ng-template #quantityControls>
+                        <div class="quantity-controls d-flex align-items-center">
+                          <button class="btn btn-sm btn-outline-secondary" (click)="updateCartQuantity(product.id, getCartQuantity(product.id) - 1)">-</button>
+                          <span class="mx-2">{{ getCartQuantity(product.id) }}</span>
+                          <button class="btn btn-sm btn-outline-secondary" (click)="updateCartQuantity(product.id, getCartQuantity(product.id) + 1)">+</button>
+                        </div>
+                      </ng-template>
                     </div>
                   </div>
                 </div>
@@ -181,7 +190,21 @@
                     <h5 class="element-title text-uppercase fs-5 mt-3">
                       <a [href]="product.link">{{ product.title }}</a>
                     </h5>
-                    <a (click)="addToCart(product); $event.preventDefault()" class="text-decoration-none" data-after="Add to cart"><span>{{ product.price }}</span></a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <span class="price fw-bold">{{ product.price }}</span>
+                      <div *ngIf="!isInCart(product.id); else bestSellerQuantityControls">
+                        <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)">
+                          Add to Cart
+                        </button>
+                      </div>
+                      <ng-template #bestSellerQuantityControls>
+                        <div class="quantity-controls d-flex align-items-center">
+                          <button class="btn btn-sm btn-outline-secondary" (click)="updateCartQuantity(product.id, getCartQuantity(product.id) - 1)">-</button>
+                          <span class="mx-2">{{ getCartQuantity(product.id) }}</span>
+                          <button class="btn btn-sm btn-outline-secondary" (click)="updateCartQuantity(product.id, getCartQuantity(product.id) + 1)">+</button>
+                        </div>
+                      </ng-template>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -263,7 +286,21 @@
                     <h5 class="element-title text-uppercase fs-5 mt-3">
                       <a [href]="product.link">{{ product.title }}</a>
                     </h5>
-                    <a (click)="addToCart(product); $event.preventDefault()" class="text-decoration-none" data-after="Add to cart"><span>{{ product.price }}</span></a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <span class="price fw-bold">{{ product.price }}</span>
+                      <div *ngIf="!isInCart(product.id); else relatedQuantityControls">
+                        <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)">
+                          Add to Cart
+                        </button>
+                      </div>
+                      <ng-template #relatedQuantityControls>
+                        <div class="quantity-controls d-flex align-items-center">
+                          <button class="btn btn-sm btn-outline-secondary" (click)="updateCartQuantity(product.id, getCartQuantity(product.id) - 1)">-</button>
+                          <span class="mx-2">{{ getCartQuantity(product.id) }}</span>
+                          <button class="btn btn-sm btn-outline-secondary" (click)="updateCartQuantity(product.id, getCartQuantity(product.id) + 1)">+</button>
+                        </div>
+                      </ng-template>
+                    </div>
                   </div>
                 </div>
               </div>

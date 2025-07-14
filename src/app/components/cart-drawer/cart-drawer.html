@@ -20,7 +20,11 @@
               <button class="btn btn-sm btn-outline-secondary" (click)="cartService.updateQuantity(item.id, item.quantity - 1)">-</button>
               <span class="mx-2">{{ item.quantity }}</span>
               <button class="btn btn-sm btn-outline-secondary" (click)="cartService.updateQuantity(item.id, item.quantity + 1)">+</button>
-              <button class="btn btn-sm btn-outline-danger ms-2" (click)="cartService.removeFromCart(item.id)">Remove</button>
+              <button class="btn btn-sm btn-outline-danger ms-2 delete-btn" (click)="cartService.removeFromCart(item.id)" title="Remove from cart">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>

@@ -92,108 +92,118 @@
       "link": "#"
     }
   ],
-  "newArrivals": [
+  "products": [
     {
       "id": 1,
       "image": "images/product-item-1.jpg",
       "title": "Dark florish onepiece",
       "price": "$95.00",
-      "link": "#"
+      "link": "#",
+      "category": "new-arrival"
     },
     {
       "id": 2,
       "image": "images/product-item-2.jpg",
       "title": "Baggy Shirt",
       "price": "$55.00",
-      "link": "#"
+      "link": "#",
+      "category": "new-arrival"
     },
     {
       "id": 3,
       "image": "images/product-item-3.jpg",
       "title": "Cotton Off-White Shirt",
       "price": "$65.00",
-      "link": "#"
+      "link": "#",
+      "category": "new-arrival"
     },
     {
       "id": 4,
       "image": "images/product-item-4.jpg",
       "title": "Handmade crop sweater",
       "price": "$50.00",
-      "link": "#"
+      "link": "#",
+      "category": "new-arrival"
     },
     {
       "id": 5,
       "image": "images/product-item-5.jpg",
       "title": "Elegant blue dress",
       "price": "$85.00",
-      "link": "#"
-    }
-  ],
-  "bestSellers": [
+      "link": "#",
+      "category": "new-arrival"
+    },
     {
-      "id": 1,
+      "id": 6,
       "image": "images/product-item-4.jpg",
       "title": "Handmade crop sweater",
       "price": "$50.00",
-      "link": "#"
+      "link": "#",
+      "category": "best-seller"
     },
     {
-      "id": 2,
+      "id": 7,
       "image": "images/product-item-6.jpg",
       "title": "Classic white shirt",
       "price": "$45.00",
-      "link": "#"
+      "link": "#",
+      "category": "best-seller"
     },
     {
-      "id": 3,
+      "id": 8,
       "image": "images/product-item-7.jpg",
       "title": "Summer dress",
       "price": "$75.00",
-      "link": "#"
+      "link": "#",
+      "category": "best-seller"
     },
     {
-      "id": 4,
+      "id": 9,
       "image": "images/product-item-8.jpg",
       "title": "Casual jacket",
       "price": "$95.00",
-      "link": "#"
+      "link": "#",
+      "category": "best-seller"
     },
     {
-      "id": 5,
+      "id": 10,
       "image": "images/product-item-9.jpg",
       "title": "Formal blazer",
       "price": "$120.00",
-      "link": "#"
-    }
-  ],
-  "relatedProducts": [
+      "link": "#",
+      "category": "best-seller"
+    },
     {
-      "id": 1,
+      "id": 11,
       "image": "images/product-item-5.jpg",
       "title": "Elegant blue dress",
       "price": "$85.00",
-      "link": "#"
+      "link": "#",
+      "category": "related"
     },
     {
-      "id": 2,
+      "id": 12,
       "image": "images/product-item-10.jpg",
       "title": "Casual top",
       "price": "$40.00",
-      "link": "#"
+      "link": "#",
+      "category": "related"
     },
     {
-      "id": 3,
+      "id": 13,
       "image": "images/product-item-1.jpg",
       "title": "Dark florish onepiece",
       "price": "$95.00",
-      "link": "#"
+      "link": "#",
+      "category": "related"
     },
     {
-      "id": 4,
+      "id": 14,
       "image": "images/product-item-2.jpg",
       "title": "Baggy Shirt",
       "price": "$55.00",
-      "link": "#"
+      "link": "#",
+      "category": "related"
     }
   ],
   "blogPosts": [

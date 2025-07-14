@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, signal, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, computed, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { trigger, state, style, transition, animate, query, stagger } from '@angular/animations';
 import homeData from '@data/home.json';
@@ -27,6 +27,7 @@ export interface ProductItem {
   title: string;
   price: string;
   link: string;
+  category: string;
 }
 
 export interface CategoryItem {
@@ -106,7 +107,7 @@ export interface InstagramItem {
 })
 export class Home implements OnInit, AfterViewInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
-  private cartService = inject(CartService);
+  cartService = inject(CartService);
   wishlistService = inject(WishlistService);
   
   bannerItems = signal<BannerItem[]>(homeData.bannerItems);
@@ -115,11 +116,13 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
 
   categoryItems = signal<CategoryItem[]>(homeData.categoryItems);
 
-  newArrivals = signal<ProductItem[]>(homeData.newArrivals);
+  // All products from the single array
+  allProducts = signal<ProductItem[]>(homeData.products);
 
-  bestSellers = signal<ProductItem[]>(homeData.bestSellers);
-
-  relatedProducts = signal<ProductItem[]>(homeData.relatedProducts);
+  // Filtered products by category
+  newArrivals = computed(() => this.allProducts().filter(product => product.category === 'new-arrival'));
+  bestSellers = computed(() => this.allProducts().filter(product => product.category === 'best-seller'));
+  relatedProducts = computed(() => this.allProducts().filter(product => product.category === 'related'));
 
   blogPosts = signal<BlogItem[]>(homeData.blogPosts);
 
@@ -313,6 +316,23 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
 
   isInWishlist(productId: number): boolean {
     return this.wishlistService.isInWishlist(productId);
+  }
+
+  isInCart(productId: number): boolean {
+    return this.cartService.items().some(item => item.id === productId);
+  }
+
+  getCartQuantity(productId: number): number {
+    const item = this.cartService.items().find(item => item.id === productId);
+    return item ? item.quantity : 0;
+  }
+
+  updateCartQuantity(productId: number, quantity: number) {
+    this.cartService.updateQuantity(productId, quantity);
+  }
+
+  removeFromCart(productId: number) {
+    this.cartService.removeFromCart(productId);
   }
 
 }
