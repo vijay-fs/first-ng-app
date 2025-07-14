@@ -1,15 +1,20 @@
-import { Component, signal, AfterViewInit } from '@angular/core';
+import { Component, signal, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import headerData from '@data/header.json';
+import { CartService } from '../../services/cart.service';
+import { WishlistService } from '../../services/wishlist.service';
+import { WishlistDrawer } from '../wishlist-drawer/wishlist-drawer';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule, WishlistDrawer],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header implements AfterViewInit {
   headerData = signal(headerData);
+  cartService = inject(CartService);
+  wishlistService = inject(WishlistService);
   
   constructor() {}
   

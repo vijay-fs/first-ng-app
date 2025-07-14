@@ -100,16 +100,21 @@
                   <a [href]="product.link">
                     <img [src]="product.image" alt="product" class="product-image img-fluid">
                   </a>
-                  <a [href]="product.link" class="btn-icon btn-wishlist">
+                  <button type="button" class="btn-icon btn-wishlist" (click)="toggleWishlist(product)" [class.active]="isInWishlist(product.id)">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#heart"></use>
                     </svg>
-                  </a>
+                  </button>
                   <div class="product-content">
                     <h5 class="element-title text-uppercase fs-5 mt-3">
                       <a [href]="product.link">{{ product.title }}</a>
                     </h5>
-                    <a [href]="product.link" class="text-decoration-none" data-after="Add to cart"><span>{{ product.price }}</span></a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <span class="price fw-bold">{{ product.price }}</span>
+                      <button type="button" class="btn btn-primary btn-sm" (click)="addToCart(product)">
+                        Add to Cart
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -167,16 +172,16 @@
                   <a [href]="product.link">
                     <img [src]="product.image" alt="product" class="product-image img-fluid">
                   </a>
-                  <a [href]="product.link" class="btn-icon btn-wishlist">
+                  <button type="button" class="btn-icon btn-wishlist" (click)="toggleWishlist(product)" [class.active]="isInWishlist(product.id)">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#heart"></use>
                     </svg>
-                  </a>
+                  </button>
                   <div class="product-content">
                     <h5 class="element-title text-uppercase fs-5 mt-3">
                       <a [href]="product.link">{{ product.title }}</a>
                     </h5>
-                    <a [href]="product.link" class="text-decoration-none" data-after="Add to cart"><span>{{ product.price }}</span></a>
+                    <a (click)="addToCart(product); $event.preventDefault()" class="text-decoration-none" data-after="Add to cart"><span>{{ product.price }}</span></a>
                   </div>
                 </div>
               </div>
@@ -249,16 +254,16 @@
                   <a [href]="product.link">
                     <img [src]="product.image" alt="product" class="product-image img-fluid">
                   </a>
-                  <a [href]="product.link" class="btn-icon btn-wishlist">
+                  <button type="button" class="btn-icon btn-wishlist" (click)="toggleWishlist(product)" [class.active]="isInWishlist(product.id)">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#heart"></use>
                     </svg>
-                  </a>
+                  </button>
                   <div class="product-content">
                     <h5 class="element-title text-uppercase fs-5 mt-3">
                       <a [href]="product.link">{{ product.title }}</a>
                     </h5>
-                    <a [href]="product.link" class="text-decoration-none" data-after="Add to cart"><span>{{ product.price }}</span></a>
+                    <a (click)="addToCart(product); $event.preventDefault()" class="text-decoration-none" data-after="Add to cart"><span>{{ product.price }}</span></a>
                   </div>
                 </div>
               </div>

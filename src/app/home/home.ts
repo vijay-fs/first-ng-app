@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy, signal, AfterViewInit, PLATFORM_ID, injec
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { trigger, state, style, transition, animate, query, stagger } from '@angular/animations';
 import homeData from '@data/home.json';
+import { CartService } from '../services/cart.service';
+import { WishlistService } from '../services/wishlist.service';
 
 // Interfaces
 export interface BannerItem {
@@ -104,6 +106,8 @@ export interface InstagramItem {
 })
 export class Home implements OnInit, AfterViewInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
+  private cartService = inject(CartService);
+  wishlistService = inject(WishlistService);
   
   bannerItems = signal<BannerItem[]>(homeData.bannerItems);
 
@@ -297,6 +301,18 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
         [sectionId]: 'visible'
       }));
     }
+  }
+
+  addToCart(product: ProductItem) {
+    this.cartService.addToCart(product);
+  }
+
+  toggleWishlist(product: ProductItem) {
+    this.wishlistService.toggleWishlist(product);
+  }
+
+  isInWishlist(productId: number): boolean {
+    return this.wishlistService.isInWishlist(productId);
   }
 
 }

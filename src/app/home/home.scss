@@ -79,7 +79,24 @@
 
     .btn-wishlist {
       opacity: 0;
-      transition: opacity 0.3s ease;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      color: #666;
+      transition: opacity 0.3s ease, color 0.3s ease;
+      
+      &:hover {
+        color: #ff6b6b;
+      }
+      
+      &.active {
+        opacity: 1;
+        color: #ff6b6b;
+        
+        svg {
+          fill: #ff6b6b;
+        }
+      }
     }
 
     .product-item:hover .btn-wishlist {
@@ -306,5 +323,15 @@
     }
     
     .item-anchor:hover {
+      color: #8C907E;
+    }
+
+    // Cart functionality styling
+    .product-content a[data-after="Add to cart"] {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .product-content a[data-after="Add to cart"]:hover {
       color: #8C907E;
     }
